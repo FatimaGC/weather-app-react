@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./styles.css";
 import SiteHeader from "./components/SiteHeader";
 import SearchBar from "./components/SearchBar";
-import CurrentWeather from "./components/CurrentWeather";
+import CurrentWeather from "./CurrentWeather/components";
 
 export default function App() {
   const [searchValue, setSearchValue] = useState("");
