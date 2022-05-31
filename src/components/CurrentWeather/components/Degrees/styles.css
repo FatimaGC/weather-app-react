@@ -1,0 +1,19 @@
+.current-weather_degrees {
+  color: white;
+  font-size: 50px;
+  font-weight: bolder;
+  margin-bottom: 10px;
+}
+
+.current-weather_units {
+  color: white;
+  font-size: 20px;
+  position: relative;
+  bottom: 72px;
+  left: 100px;
+  /* top: 10px; */
+}
+
+.current-weather_description {
+  text-transform: capitalize;
+}
