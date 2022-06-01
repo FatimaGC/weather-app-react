@@ -26,6 +26,7 @@ export default function SearchBar({ onSubmit }) {
           class="form-control"
           aria-label="Sizing example input"
           aria-describedby="inputGroup-sizing-default"
+          autoFocus="on"
           id="search-text-input"
           value={searchValue}
           onChange={handleChange}
