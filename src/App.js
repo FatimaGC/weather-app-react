@@ -5,7 +5,7 @@ import SearchBar from "./components/SearchBar";
 import CurrentWeather from "./components/CurrentWeather";
 
 export default function App() {
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState("Denver");
   function handleSubmit(searchValue) {
     setSearchValue(searchValue);
   }

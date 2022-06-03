@@ -1,13 +1,13 @@
 import React from "react";
 import "./styles.css";
 
-export default function CurrentWeatherlist() {
+export default function CurrentWeatherlist({ humidity, wind }) {
   return (
-    <div class="col">
-      <ul class="current-weather_list">
-        <li>Humidity: 14%</li>
+    <div className="col">
+      <ul className="current-weather_list">
+        <li>Humidity: {humidity}%</li>
         <li>
-          Wind: <span id="wind">13</span>mph
+          Wind: <span id="wind">{wind}</span>mph
         </li>
       </ul>
     </div>

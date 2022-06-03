@@ -1,13 +1,14 @@
 import React from "react";
 import "./styles.css";
 
-export default function CurrentWeatherImage() {
+export default function CurrentWeatherImage({ icon, iconDescription }) {
+  const imageSource = `http://openweathermap.org/img/wn/${icon}@2x.png`;
   return (
-    <div class="col">
+    <div className="col">
       <img
-        src="https://ssl.gstatic.com/onebox/weather/64/sunny.png"
-        alt="Sunny"
-        class="current-weather_image"
+        src={imageSource}
+        alt={iconDescription}
+        className="current-weather_image"
         id="icon"
       />
     </div>
