@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles.css";
 
-export default function CurrentWeatherImage({ icon, iconDescription }) {
+export default function Image({ icon, iconDescription }) {
   const imageSource = `http://openweathermap.org/img/wn/${icon}@2x.png`;
   return (
     <div className="col">
