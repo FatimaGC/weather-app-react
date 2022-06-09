@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./styles.css";
 import Title from "./components/Title";
-import Image from "./components/Image";
+import Image from "../Image";
 import Degrees from "./components/Degrees";
 import List from "./components/List";
 import axios from "axios";
 
-export default function CurrentWeather({ searchValue }) {
+export default function CurrentWeather({ searchValue, onSuccess }) {
   const [temperature, setTemperature] = useState(null);
   const [hasError, setHasError] = useState(false);
   const [icon, setIcon] = useState("");
@@ -34,6 +34,7 @@ export default function CurrentWeather({ searchValue }) {
         setDescription(response.data.weather[0].main);
         setHumidity(response.data.main.humidity);
         setWind(response.data.wind.speed);
+        onSuccess(response);
       }
 
       function handleFailure() {

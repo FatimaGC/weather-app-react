@@ -7,8 +7,16 @@ import WeeklyForecast from "./components/WeeklyForecast";
 
 export default function App() {
   const [searchValue, setSearchValue] = useState("Denver");
+  const [coordinates, setCoordinates] = useState({});
   function handleSubmit(searchValue) {
     setSearchValue(searchValue);
+  }
+
+  function handleCurrentWeatherSuccess(response) {
+    setCoordinates({
+      latitude: response.data.coord.lat,
+      longitude: response.data.coord.lon,
+    });
   }
   return (
     <div className="App">
@@ -16,8 +24,11 @@ export default function App() {
         <div className="wrapper">
           <SiteHeader />
           <SearchBar onSubmit={handleSubmit} />
-          <CurrentWeather searchValue={searchValue} />
-          <WeeklyForecast />
+          <CurrentWeather
+            searchValue={searchValue}
+            onSuccess={handleCurrentWeatherSuccess}
+          />
+          <WeeklyForecast coordinates={coordinates} />
           <p>
             <a href="https://github.com/FatimaGC/weather-app-react">
               Open-source code
