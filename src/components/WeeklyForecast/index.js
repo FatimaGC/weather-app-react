@@ -3,6 +3,7 @@ import Image from "../Image";
 import axios from "axios";
 
 export default function WeeklyForecast({ coordinates }) {
+  const [weekDay, setWeekDay] = useState("");
   const [icon, setIcon] = useState("");
   const [iconDescription, setIconDescription] = useState("");
   const [maxTemperature, setMaxTemperature] = useState("");
@@ -22,10 +23,17 @@ export default function WeeklyForecast({ coordinates }) {
 
       function handleSuccess(response) {
         console.log(response);
-        setMaxTemperature(Math.round(response.data.daily[0].temp.max));
-        setMinTemperature(Math.round(response.data.daily[0].temp.min));
+        function day() {
+          let date = new Date(response.data.daily[0].dt * 1000);
+          let day = date.getDay();
+          let days = ["Sun", "Mon", "Tues", "Weds", "Thurs", "Fri", "Sat"];
+          return days[day];
+        }
+        setWeekDay(day);
         setIcon(response.data.daily[0].weather[0].icon);
         setIconDescription(response.data.daily[0].weather[0].icon);
+        setMaxTemperature(Math.round(response.data.daily[0].temp.max));
+        setMinTemperature(Math.round(response.data.daily[0].temp.min));
       }
     }
   }, [coordinates]);
@@ -36,13 +44,16 @@ export default function WeeklyForecast({ coordinates }) {
 
       <div className="weekly-forecast_container" id="forecast">
         <div className="col">
-          <h3>Mon</h3>
+          <h3>{weekDay}</h3>
           <span className="weather-icon">
             <Image icon={icon} iconDescription={iconDescription} />
           </span>
           <p>
             {maxTemperature}° |{" "}
-            <span class="weekly-forecast_min_degrees"> {minTemperature}°</span>
+            <span className="weekly-forecast_min_degrees">
+              {" "}
+              {minTemperature}°
+            </span>
           </p>
         </div>
       </div>
