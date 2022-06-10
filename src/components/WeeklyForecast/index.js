@@ -16,11 +16,6 @@ export default function WeeklyForecast({ coordinates }) {
       const apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.latitude}&lon=${coordinates.longitude}&appid=${apiKey}&units=imperial`;
       axios.get(apiUrl).then(handleSuccess);
 
-      // function showTemperature(response) {
-      //   console.log(response.data);
-      //   setTemperature(Math.round(response.data.main.temp));
-      // }
-
       function handleSuccess(response) {
         console.log(response);
         function day() {
