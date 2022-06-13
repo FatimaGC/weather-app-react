@@ -41,7 +41,7 @@ export default function CurrentWeather({ searchValue, onSuccess }) {
         setHasError(true);
       }
     }
-  }, [searchValue]);
+  }, [searchValue, onSuccess]);
 
   return (
     <section className="current-weather_container row align-items-center">
