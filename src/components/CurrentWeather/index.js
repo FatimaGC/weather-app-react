@@ -15,7 +15,7 @@ export default function CurrentWeather({ searchValue, onSuccess }) {
   const [humidity, setHumidity] = useState("");
   const [wind, setWind] = useState("");
 
-  const apiKey = "0a4dc3c696be7291e8d469a7dbee552f";
+  const apiKey = "c58ee6511de9b5bd165f8790240629fe";
 
   useEffect(() => {
     if (searchValue) {
