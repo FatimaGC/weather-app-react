@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import "./styles.css";
 import SiteHeader from "./components/SiteHeader";
 import SearchBar from "./components/SearchBar";
@@ -12,12 +12,16 @@ export default function App() {
     setSearchValue(searchValue);
   }
 
-  function handleCurrentWeatherSuccess(response) {
-    setCoordinates({
-      latitude: response.data.coord.lat,
-      longitude: response.data.coord.lon,
-    });
-  }
+  const handleCurrentWeatherSuccess = useCallback(
+    (response) => {
+      setCoordinates({
+        latitude: response.data.coord.lat,
+        longitude: response.data.coord.lon,
+      });
+    },
+    [setCoordinates]
+  );
+
   return (
     <div className="App">
       <div className="container">
