@@ -19,7 +19,7 @@ export default function CurrentWeather({ searchValue, onSuccess }) {
 
   useEffect(() => {
     if (searchValue) {
-      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=35&lon=139&appid=${apiKey}&units=imperial&q=${searchValue}`;
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?&appid=${apiKey}&units=imperial&q=${searchValue}`;
       axios.get(apiUrl).then(handleSuccess).catch(handleFailure);
 
       function showTemperature(response) {
