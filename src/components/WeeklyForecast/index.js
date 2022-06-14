@@ -6,7 +6,7 @@ export default function WeeklyForecast({ coordinates }) {
   const [dailyWeatherData, setdailyWeatherData] = useState([]);
   // const [hasError, setHasError] = useState(false);
 
-  const apiKey = "c59240eed9f081fcf80eb628fd9cea464";
+  const apiKey = "59240eed9f081fcf80eb628fd9cea464";
 
   useEffect(() => {
     if (coordinates.latitude && coordinates.longitude) {
