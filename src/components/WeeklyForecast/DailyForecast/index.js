@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "../../Image";
+import "./styles.css";
 
 function day(dailyWeatherEntry) {
   if (dailyWeatherEntry?.dt) {
@@ -21,21 +22,18 @@ export default function DailyForecast({ dailyWeatherEntry }) {
 
   return (
     <div>
-      <div className="weekly-forecast_container row" id="forecast">
-        <div className="col-2">
-          <h3>{weekDay}</h3>
-          <span className="weather-icon">
-            <Image icon={icon} iconDescription={iconDescription} />
-          </span>
-          <p>
-            {maxTemperature}° |{" "}
-            <span className="weekly-forecast_min_degrees">
-              {" "}
-              {minTemperature}°
-            </span>
-          </p>
-        </div>
-      </div>
+      {/* <div className="row"> */}
+      {/* <div className="col"> */}
+      <h3>{weekDay}</h3>
+      <span className="weather-icon">
+        <Image icon={icon} iconDescription={iconDescription} />
+      </span>
+      <p>
+        {maxTemperature}° |{" "}
+        <span className="weekly-forecast_min_degrees"> {minTemperature}°</span>
+      </p>
+      {/* </div> */}
+      {/* </div> */}
     </div>
   );
 }

@@ -11,6 +11,6 @@
   font-size: 20px;
 }
 
-.weekly-forecast_min_degrees {
-  opacity: 0.5;
+.weekly-forecast_list {
+  list-style: none;
 }

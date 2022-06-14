@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import DailyForecast from "./DailyForecast";
+import "./styles.css";
 import axios from "axios";
 
 export default function WeeklyForecast({ coordinates }) {
@@ -21,16 +22,16 @@ export default function WeeklyForecast({ coordinates }) {
   }, [coordinates]);
 
   return (
-    <>
+    <div className="weekly-forecast_container row align-items-center">
       <h2 className="weekly-forecast_title">Weekly Forecast</h2>
 
-      <ul>
-        {dailyWeatherData.map((dailyWeatherEntry) => (
-          <li key={dailyWeatherEntry.dt}>
+      <ul className="weekly-forecast_list">
+        {dailyWeatherData.map((dailyWeatherEntry, index) => (
+          <li key={index}>
             <DailyForecast dailyWeatherEntry={dailyWeatherEntry} />
           </li>
         ))}
       </ul>
-    </>
+    </div>
   );
 }

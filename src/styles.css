@@ -13,22 +13,3 @@ form {
   max-width: 60%;
   padding: 20px;
 }
-
-/* Weekly Forecast styles */
-
-.weekly-forecast_container {
-  margin: 40px 0;
-}
-.weekly-forecast_title {
-  color: gray;
-  font-size: 25px;
-  margin-bottom: 40px;
-}
-
-.weekly-forecast_container h3 {
-  font-size: 20px;
-}
-
-.weekly-forecast_min_degrees {
-  opacity: 0.5;
-}
