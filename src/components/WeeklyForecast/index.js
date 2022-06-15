@@ -22,16 +22,20 @@ export default function WeeklyForecast({ coordinates }) {
   }, [coordinates]);
 
   return (
-    <div className="weekly-forecast_container row align-items-center">
+    <div>
       <h2 className="weekly-forecast_title">Weekly Forecast</h2>
 
-      <ul className="weekly-forecast_list">
-        {dailyWeatherData.map((dailyWeatherEntry, index) => (
-          <li key={index}>
-            <DailyForecast dailyWeatherEntry={dailyWeatherEntry} />
-          </li>
-        ))}
-      </ul>
+      <div className="weekly-forecast_container">
+        {/* <div className="row align-items-center"> */}
+        <ul className="weekly-forecast_list container align-items-center">
+          {dailyWeatherData.map((dailyWeatherEntry, index) => (
+            <li key={index}>
+              <DailyForecast dailyWeatherEntry={dailyWeatherEntry} />
+            </li>
+          ))}
+        </ul>
+        {/* </div> */}
+      </div>
     </div>
   );
 }

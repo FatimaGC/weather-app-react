@@ -21,19 +21,15 @@ export default function DailyForecast({ dailyWeatherEntry }) {
   const minTemperature = Math.round(dailyWeatherEntry?.temp.min);
 
   return (
-    <div>
-      {/* <div className="row"> */}
-      {/* <div className="col"> */}
+    <div className="col">
       <h3>{weekDay}</h3>
-      <span className="weather-icon">
+      <span>
         <Image icon={icon} iconDescription={iconDescription} />
       </span>
       <p>
         {maxTemperature}° |{" "}
         <span className="weekly-forecast_min_degrees"> {minTemperature}°</span>
       </p>
-      {/* </div> */}
-      {/* </div> */}
     </div>
   );
 }

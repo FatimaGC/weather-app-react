@@ -1,3 +1,9 @@
 .weekly-forecast_min_degrees {
   opacity: 0.5;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
